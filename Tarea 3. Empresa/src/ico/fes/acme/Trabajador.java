@@ -94,23 +94,6 @@ public class Trabajador {
         return this.sueldoBase + prestacion + he;
     }
     
-    public void obtenerMaxMin(){
-        int max= 0;
-        int min = 299999;
-        int trabMax = 0;
-        int trabMin = 0;
-            if(this.anioIngreso>max){
-                max= this.anioIngreso;
-                trabMax = this.anioIngreso;}
-            
-            if(this.getAnioIngreso()<min){
-                min=this.anioIngreso;
-                trabMin = this.anioIngreso;
-            }
-          System.out.println(trabMax);
-        System.out.println(trabMin); 
-    }
-       
 
     
 }
