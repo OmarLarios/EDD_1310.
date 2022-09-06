@@ -1,0 +1,116 @@
+
+package ico.fes.acme;
+
+
+public class Trabajador {
+    public static final double VALOR_HORAS_EXTRA = 276.5;
+    public static final double PRESTACION_ANTIGUEDAD = 0.03;
+    private int id;
+    private String nombre;
+    private String paterno;
+    private String materno;
+    private double sueldoBase;
+    private int horasExtra;
+    private int anioIngreso;
+    
+
+    public Trabajador() {
+    }
+
+    public Trabajador(int id, String nombre, String paterno, String materno, double sueldoBase, int horasExtra, int anioIngreso) {
+        this.id = id;
+        this.nombre = nombre;
+        this.paterno = paterno;
+        this.materno = materno;
+        this.horasExtra = horasExtra;
+        this.sueldoBase = sueldoBase;
+        this.anioIngreso = anioIngreso;
+    }
+
+    public int getAnioIngreso() {
+        return anioIngreso;
+    }
+
+    public void setAnioIngreso(int anioIngreso) {
+        this.anioIngreso = anioIngreso;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getPaterno() {
+        return paterno;
+    }
+
+    public void setPaterno(String paterno) {
+        this.paterno = paterno;
+    }
+
+    public String getMaterno() {
+        return materno;
+    }
+
+    public void setMaterno(String materno) {
+        this.materno = materno;
+    }
+
+    public double getSueldoBase() {
+        return sueldoBase;
+    }
+
+    public void setSueldoBase(double sueldoBase) {
+        this.sueldoBase = sueldoBase;
+    }
+
+    public int getHorasExtra() {
+        return horasExtra;
+    }
+
+    public void setHorasExtra(int horasExtra) {
+        this.horasExtra = horasExtra;
+    }
+
+    @Override
+    public String toString() {
+        return "Empleado{" + "id=" + id + ", nombre=" + nombre + ", paterno=" + paterno + ", materno=" + materno + ", horasExtra=" + horasExtra +", sueldoBase=" + sueldoBase + ", anioIngreso=" + anioIngreso + '}';
+    }
+    
+    public double calcularSueldo(){
+        double prestacion=(2022-this.anioIngreso)*this.PRESTACION_ANTIGUEDAD;
+        double he = this.horasExtra * this.VALOR_HORAS_EXTRA;
+        return this.sueldoBase + prestacion + he;
+    }
+    
+    public void obtenerMaxMin(){
+        int max= 0;
+        int min = 299999;
+        int trabMax = 0;
+        int trabMin = 0;
+            if(this.anioIngreso>max){
+                max= this.anioIngreso;
+                trabMax = this.anioIngreso;}
+            
+            if(this.getAnioIngreso()<min){
+                min=this.anioIngreso;
+                trabMin = this.anioIngreso;
+            }
+          System.out.println(trabMax);
+        System.out.println(trabMin); 
+    }
+       
+
+    
+}
